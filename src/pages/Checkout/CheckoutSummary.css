@@ -1,0 +1,127 @@
+/* === General Font and Layout === */
+.checkout-right {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0.1rem 0rem 1.5rem 0rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-top: none; /* cleaner top look */
+  align-self: flex-start;
+  margin-left: -4rem;
+  margin-top: -1.2rem;
+
+  
+}
+
+/* === Product Count === */
+/* .product-count {
+  text-align: center;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #555;
+  margin-bottom: 1.9rem;
+  text-transform: uppercase;
+  
+} */
+
+/* === Product Preview === */
+.checkout-product-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.checkout-product-preview img {
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+}
+
+.checkout-product-info {
+  flex: 1;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.checkout-product-info p {
+  margin: 0.2rem 0;
+}
+
+.checkout-product-name {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.checkout-price {
+  font-size: 0.6rem;
+  font-weight: 500;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* === Promo Code === */
+.checkout-promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  font-size: 0.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.checkout-promo button {
+  border: none;
+  background: none;
+  color: #c84b31;
+  font-weight: 600;
+  font-size: 0.55rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.plus {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* === Totals Section === */
+.checkout-summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  margin: 0.6rem 0;
+}
+
+.checkout-summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.checkout-vat-note {
+  font-size: 0.6rem;
+  color: #777;
+  margin-bottom: 1.8rem;
+}
+
+/* === Additional Styles From Cart Summary (Preserved) === */
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,337 @@
+/* === PAGE LAYOUT === */
+.shoe-detail-page {
+  display: flex;
+  gap: 4rem;
+  max-width: 1300px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.shoe-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoe-detail-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  
+}
+
+.shoe-info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.shoe-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 0.4rem;
+}
+
+.shoe-price {
+  font-size: 0.9rem !important;
+  color: #222;
+  margin-bottom: 1rem;
+  margin-left: 1px;
+}
+
+/* === SIZE SELECT === */
+.size-select-container {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  margin-bottom: 1.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 1px solid #ccc;
+  transition: border 0.2s ease;
+  cursor: pointer;
+}
+
+
+.size-select-box {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 0.85rem;
+  background-color: #fdfdfd;
+  color: #111;
+}
+
+.size-label {
+  color: #111;
+}
+
+.size-arrow {
+  color: #c15000;
+  font-size: 1rem;
+  margin-top: -8px;
+}
+
+.size-guide {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.8rem;
+  font-size: 0.9rem;
+  color: #c15000;
+  text-decoration: underline;
+  border-left: 1px solid #ccc;
+  height: 100%;
+  background-color: #fcfcfc;
+  transition: background 0.2s ease;
+}
+
+.size-guide:hover {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
+/* === SIZE DRAWER === */
+.size-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+}
+
+.size-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+  animation: slideDrawerRight 0.35s ease forwards;
+  z-index: 1000;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideDrawerRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.close-size-drawer {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #111;
+  cursor: pointer;
+}
+
+.size-drawer-title {
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: #111;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.drawer-size-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-size-item {
+  font-size: 1rem;
+  padding: 0.9rem 0 0.9rem 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #363636;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.drawer-size-item::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #333;
+  transition: width 0.2s ease;
+  opacity: 0.2;
+}
+
+.drawer-size-item:hover::after {
+  width: 100%;
+}
+
+.drawer-size-item:hover {
+  color: #000;
+}
+
+.drawer-size-item.active {
+  font-weight: 350;
+  color: #000;
+}
+
+/* === ADD TO CART & WISHLIST === */
+.add-to-cart-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.add-to-cart-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-grow: 1;
+  transition: all 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #161414;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-icon {
+  background: transparent;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #999;
+  min-width: 45px; /* ✅ prevents visual jump */
+  text-align: center;
+}
+.wishlist-icon:hover {
+  background-color: #fce4ec;
+  border-color: #f06292;
+  color: #e91e63;
+}
+
+.wishlist-icon.active {
+  color: #e91e63;
+  border-color: #e91e63;
+  background-color: #fce4ec;
+  /* 🔥 Remove duplicate declarations: padding, font-size, border */
+}
+
+
+/* === TOAST === */
+.toast-fav {
+  position: fixed;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  border-radius: 1px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: fit-content;
+  white-space: nowrap;
+  animation: slideFadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+.close-toast {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 300;
+  color: black;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+@keyframes slideFadeIn {
+  from {
+    transform: translate(-50%, -10px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .shoe-detail-page {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .add-to-cart-wrapper {
+    flex-direction: column;
+  }
+
+  .wishlist-icon {
+    width: 100%;
+    text-align: center;
+  }
+
+  .size-drawer {
+    width: 100%;
+  }
+}
+
+.size-select-container {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  margin-bottom: 1.2rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid #ccc;
+  transition: border 0.2s ease, background-color 0.2s ease; /* ✅ smooth effect */
+  cursor: pointer;
+}
+
+.shoe-description{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: lighter;
+  
+}
+

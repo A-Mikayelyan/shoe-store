@@ -1,0 +1,263 @@
+/* ===== PAGE LAYOUT ===== */
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 6rem;                 
+  width: 100%;
+  max-width: 1100px;         
+  padding: 0 2rem;
+  margin-top: 3rem;
+}
+
+
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 6rem;              /* Clean visual gap */
+  width: 100%;
+  max-width: 900px;      /* Wider container */
+  padding: 0 2rem;
+}
+
+/* ===== LEFT & RIGHT COLUMNS ===== */
+.cart-left {
+  width: 300px !important;              
+  flex-shrink: 0;
+  
+  margin-left: 40px;
+  
+}
+
+.cart-right {
+  flex: 1;                   /* Takes only what’s left */
+  min-width: 350px;
+  margin-left: 100px;      
+    }    /* Optional: prevents too-narrow summary */
+
+/* ===== HEADERS & LABELS ===== */
+.cart-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.3rem;
+  padding-left: 0;
+  margin-top: -20px;
+
+}
+
+.section-label {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  padding-left: 0;
+  
+}
+
+.shipping-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #ddd;
+  gap: 0.8rem;
+  font-size: 0.72rem;
+}
+
+.product-image {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.product-info {
+  flex: 1;
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.product-name {
+  font-size: 0.82rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.product-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.4rem;
+  gap: 0.3rem;
+}
+
+.product-price {
+  font-weight: 500;
+  font-size: 0.7rem;
+  margin-top: 17.5px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #c84b31;
+  font-size: 0.6rem;
+  cursor: pointer;
+  padding: 0px;
+  letter-spacing: 0.04em;
+}
+
+.remove-icon {
+  font-size: 0.85rem;
+  
+}
+
+/* ===== SUMMARY BLOCK ===== */
+.summary-title {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+.summary-line,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.summary-total {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.vat-note {
+  font-size: 0.5rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== PROMO CODE SECTION ===== */
+.promo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.promo-label {
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.promo-add {
+  background: none;
+  border: none;
+  color: #c84b31;
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.plus {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ===== BUTTONS ===== */
+.checkout-btn {
+  width: 100%;
+  padding: 0.5rem 0.6rem !important; /* 🔽 Less height and optional side space */
+ 
+  background: black;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 0.5rem;
+  letter-spacing: 0.05em;
+  transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #c0450c;
+}
+
+/* ===== EMPTY CART ===== */
+.empty-cart {
+  color: #666;
+  font-size: 0.95rem;
+  padding-left: 0;
+}
+
+.partial-total{
+  font-size: 0.6rem;
+}
+
+.shipping{
+  font-size: 0.6rem;
+}
+
+.total-pay{
+  font-size: 0.8rem;
+}
+
+.empty-cart-wrapper {
+  text-align: center;
+  padding: 6rem 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.empty-cart-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.empty-cart-subtext {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.6rem;
+}
+
+.continue-shopping-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.continue-shopping-btn:hover {
+  background-color: #333;
+}
+
+
+
+
+
+

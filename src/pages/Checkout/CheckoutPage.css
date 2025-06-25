@@ -1,0 +1,175 @@
+.checkout-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  padding-top: px;
+}
+
+.checkout-logo {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.checkout-logo::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.1px;
+  background-color: #eee7e7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.checkout-logo a {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.checkout-steps {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+  gap: 40px;
+  position: sticky;
+}
+
+.checkout-step {
+  position: relative;
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.checkout-step.active {
+  color: #000;
+  font-weight: bold;
+}
+
+.checkout-step.active::before {
+  content: '#';
+  position: absolute;
+  left: -15px;
+  top: 0;
+  font-weight: bold;
+}
+
+.checkout-step a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.checkout-step a:hover {
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.checkout-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  gap: 3rem;
+}
+
+.checkout-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkout-right {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.checkout-content::before {
+  content: "";
+  position: absolute;
+  top: 145px; /* 👈 Adjust this to where you want the line to start */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.2px;
+  background-color: #e9e4e4;
+  z-index: 1;
+}
+
+.checkout-right {
+  position: fixed;
+  top: 150px; /* distance from top of screen */
+  align-self: flex-start;
+  height: fit-content;
+  left: 700px;
+  bottom: 200px;
+
+}
+
+.checkout-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  padding-top: 120px; /* Increased to account for fixed header */
+  position: relative;
+}
+
+.checkout-logo {
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 100;
+  margin-bottom: 0;
+}
+
+.checkout-logo::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.1px;
+  background-color: #eee7e7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.checkout-steps {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 15px 0;
+  list-style: none;
+  gap: 40px;
+  position: fixed;
+  top: 60px; /* Below logo */
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 99;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+
+
+
+
+
+

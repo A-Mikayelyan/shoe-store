@@ -1,0 +1,79 @@
+/* LoginStep.css */
+
+.login-part {
+  max-width: 300px;
+  margin: 0;
+  padding: 20px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: left;
+  margin-left: 60px;
+  margin-top: -60px;
+  
+}
+
+.email-msg {
+  font-size: 9px;
+  color: #5a5050;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.email-label {
+  display: block;
+  font-size: 8px;
+  color: #464242;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  
+  
+}
+
+.email-input {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 8px;
+  margin-bottom: 25px;
+  background: transparent;
+}
+
+.email-input:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+/* Divider line */
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
+.mandatory-note {
+  font-size: 5px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+.email-input {
+  font-size: 9px;
+}
