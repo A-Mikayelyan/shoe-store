@@ -64,6 +64,7 @@
   letter-spacing: 1px;
   cursor: pointer;
   margin: 15px 0;
+  transform: translateX(-30px) !important;
 }
 
 .mandatory-note {
@@ -76,4 +77,13 @@
 
 .email-input {
   font-size: 9px;
+}
+
+.continue-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.continue-btn {
+  transition: opacity 0.3s ease, background-color 0.3s ease, cursor 0.3s ease;
 }

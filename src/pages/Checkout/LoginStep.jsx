@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './LoginStep.css';
+import "./LoginStep.css";
 
 const LoginStep = () => {
   const [inputEmail, setInputEmail] = useState("");
@@ -9,7 +9,7 @@ const LoginStep = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // You can store email or validate here if needed
-    navigate('/checkout/shipping'); // ✅ navigation happens here
+    navigate("/checkout/shipping"); // ✅ navigation happens here
   };
 
   return (
@@ -29,7 +29,11 @@ const LoginStep = () => {
 
         <div className="input-underline"></div>
 
-        <button type="submit" className="continue-btn">
+        <button
+          type="submit"
+          className="continue-btn"
+          disabled={!inputEmail.includes("@")}
+        >
           CONTINUE
         </button>
       </form>

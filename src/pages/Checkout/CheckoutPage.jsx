@@ -6,12 +6,8 @@ import "./CheckoutPage.css";
 import { useEffect } from "react";
 
 const CheckoutPage = () => {
-
-
- 
   return (
     <div className="checkout-page">
-
       {/* 🔹 Logo centered at top */}
       <div className="checkout-logo">
         <NavLink to="/">P E L L E</NavLink>
@@ -22,12 +18,11 @@ const CheckoutPage = () => {
         <CheckoutHeader />
       </div>
 
-      
       <div className="checkout-content">
         <div className="checkout-left">
-          <Outlet /> {/* Renders Login, Shipping, etc. */}
+          <Outlet />
         </div>
-
+        
         <div className="checkout-right">
           <CheckOutSummary />
         </div>

@@ -81,6 +81,7 @@
   align-items: flex-start;
   padding: 2rem 1rem;
   gap: 3rem;
+  position: relative !important;
 }
 
 .checkout-left {
@@ -93,17 +94,6 @@
   flex-shrink: 0;
 }
 
-.checkout-content::before {
-  content: "";
-  position: absolute;
-  top: 145px; /* 👈 Adjust this to where you want the line to start */
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0.2px;
-  background-color: #e9e4e4;
-  z-index: 1;
-}
 
 .checkout-right {
   position: fixed;
@@ -164,6 +154,16 @@
   z-index: 99;
   border-bottom: 1px solid #eee;
 }
+
+.checkout-content {
+  display: flex;
+  align-items: stretch; /* Ensures divider matches full height of tallest column */
+  position: relative;
+  gap: 3rem;
+}
+
+
+
 
 
 

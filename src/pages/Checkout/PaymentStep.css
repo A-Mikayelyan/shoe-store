@@ -1,0 +1,165 @@
+.payment-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  margin-left: 0px;
+  margin-top: -50px;
+}
+
+.payment-title {
+  font-size: 0.5rem;
+  font-weight: 100;
+  margin-bottom: 1.5rem;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.radio-label {
+  font-weight: bold;
+}
+
+.card-input {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.card-input input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.continue-btn {
+  background-color: black;
+  color: white;
+  padding: 0.8rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transform: translateX(50px);
+  transition: opacity 0.3s ease, background-color 0.3s ease, cursor 0.3s ease;
+
+}
+
+.card-input input {
+  padding: 1px 0px;        /* Reduced padding */
+  font-size: 0.6rem !important;        /* Smaller font */
+  border-radius: 3px;       /* Optional: slight rounding */
+  border: 1px solid #ccc;
+  height: 38px;             /* Set a fixed smaller height */
+}
+
+.row {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.payment-form {
+  gap: 1rem;                /* Slightly reduce vertical spacing */
+}
+
+.card-input input {
+  width: 210px;        /* 👈 Make this smaller for narrower fields */
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  height: 15px;
+}
+
+/* 🔹 Blue focus border on input */
+.card-input input:focus {
+  border: 2px solid #007bff;
+  outline: none;
+}
+
+/* 🔹 Line under "PAYMENT METHOD" */
+.section-divider {
+  width: 482px;
+  border: none;
+  border-top: 0.1px solid #e6e4e4;
+  margin: 10px 0;
+}
+
+/* 🔹 Required fields note under title */
+.required-note {
+  font-size: 0.4rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* 🔹 For green checkmark positioning */
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.input-with-icon input {
+  flex: 1;
+  padding-right: 10px; /* remove large right padding */
+}
+
+.checkmark-cvv, .checkmark-date, .checkmark-cardnumber {
+  color: green;
+  font-size: 1rem;
+  margin-top: 2px;
+  margin-left: -20px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+
+.crossmark {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+
+
+
+.crossmark {
+  color: crimson;
+}
+
+.invalid {
+  border: 1.2px solid #1a73e8 !important;
+}
+
+.error-text {
+  color: crimson;
+  font-size: 0.5rem;
+  margin-top: 4px;
+  padding-left: 2px;
+}
+
+.continue-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+  }
+}
+

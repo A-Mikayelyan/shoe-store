@@ -1,0 +1,120 @@
+
+.summary-drawer-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: background-color 0.4s ease, opacity 0.4s ease;
+}
+
+.summary-drawer-overlay.visible {
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* === DRAWER === */
+.summary-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  width: 280px; /* narrowed */
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.summary-drawer.open {
+  transform: translateX(0);
+}
+
+/* === HEADER === */
+.summary-header {
+  padding: 1.2rem 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #eee;
+  color: #111;
+  
+}
+
+.summary-close-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.summary-close-btn:hover {
+  color: #000;
+}
+
+/* === CONTENT === */
+.summary-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+}
+
+/* === ITEM === */
+.summary-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  gap: 1rem;
+}
+
+.summary-image {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.summary-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 5;
+  color: #222;
+  gap: 0.25rem;
+}
+
+.summary-name {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.3;
+  margin: 0 0 0.2rem 0;
+}
+
+.summary-detail {
+  font-size: 10px;
+  color: #444;
+  margin: 0;
+}
+
+.summary-price {
+  font-size: 10px;
+  color: #000;
+  font-weight: 400;
+  white-space: nowrap;
+}

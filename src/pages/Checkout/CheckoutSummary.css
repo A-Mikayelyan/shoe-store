@@ -106,12 +106,72 @@
 }
 
 .checkout-vat-note {
-  font-size: 0.6rem;
+  font-size: 0.42rem;
   color: #777;
   margin-bottom: 1.8rem;
+  transform: translateX(275px);
 }
 
-/* === Additional Styles From Cart Summary (Preserved) === */
+.checkout-extra-info {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+.info-block {
+  margin-bottom: 1rem;
+  font-size: 0.5rem;
+  color: #222;
+  transform: translateX(10px);
+}
+
+.info-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.info-text {
+  color: #555;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.input-with-icon input {
+  flex: 1;
+  padding-right: 30px; /* ensure there's space for icons */
+}
+
+.checkmark-cardnumber,
+.checkmark-cvv {
+  position: absolute;
+  right: 10px;
+  color: green;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.crossmark {
+  position: absolute;
+  right: 10px;
+  color: crimson;
+  font-size: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
 
 
 

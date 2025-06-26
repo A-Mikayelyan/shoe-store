@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import CartDrawer from "../CartDrawer";
+import SummaryDrawer from "./SummaryDrawer";
 import "./Layout.css";
 import { useRef, useState } from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi";
@@ -21,6 +22,7 @@ const Layout = () => {
   const hoverTimeOut = useRef(null);
 
   const isCheckout = location.pathname.startsWith("/checkout");
+  const isShoeDetail = location.pathname.startsWith("/shoe/");
 
   return (
     <div className="layout-wrapper">
@@ -86,13 +88,14 @@ const Layout = () => {
         </nav>
       )}
 
-      {/* Main route content */}
+      {/* ✅ Main content from routing */}
       <main className="main-content">
         <Outlet />
       </main>
 
-      {/* ✅ Hide cart drawer on checkout */}
+      {/* ✅ Render drawers only when not on checkout or shoe detail pages */}
       {!isCheckout && <CartDrawer />}
+      <SummaryDrawer />
     </div>
   );
 };

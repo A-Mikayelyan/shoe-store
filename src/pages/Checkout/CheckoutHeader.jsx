@@ -2,10 +2,13 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './CheckoutHeader.css';
 import { useCart } from '../../context/CartContext';
+import { useSummaryDrawer } from '../../context/SummaryDrawerContext';
+
 
 const CheckoutHeader = () => {
   const location = useLocation();
-  const {cart} = useCart();
+  const { cart } = useCart();
+  const {openSummaryDrawer} = useSummaryDrawer();
 
   const getCurrentStep = () => {
     if (location.pathname.includes('/checkout/shipping')) return 2;
@@ -15,6 +18,8 @@ const CheckoutHeader = () => {
   };
 
   const step = getCurrentStep();
+
+ 
 
   return (
     <header className="checkout-header">
@@ -26,9 +31,16 @@ const CheckoutHeader = () => {
           <li className={step === 4 ? 'active' : ''} data-step="4">Review</li>
         </ul>
       </nav>
+
       <div className='prod-quantity'>
         {cart.length} PRODUCT{cart.length > 1 ? 'S' : ''}
+        {cart.length > 1 && (
+          <button className="view-button" onClick={openSummaryDrawer}>
+            VIEW <span className="orange-arrow">&gt;</span>
+          </button>
+        )}
       </div>
+
       <div className="checkout-divider" />
     </header>
   );
