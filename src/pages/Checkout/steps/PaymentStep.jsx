@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./PaymentStep.css";
+import { useNavigate } from "react-router-dom";
+import { useCheckout } from "../../../context/CheckoutContext";
 
 const PaymentStep = () => {
+
+  const { setPaymentInfo } = useCheckout();
+
+  const navigate = useNavigate();
   const [cardData, setCardData] = useState({
     cardNumber: "",
     expiryDate: "",
@@ -34,11 +40,14 @@ const PaymentStep = () => {
     setCardData((prev) => ({ ...prev, nameOnCard: onlyLettersAndSpaces }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (!isValidCardNumber || !isValidCvv || !isValidExpiry || !agreed) return;
-  };
+  if (!isValidCardNumber || !isValidCvv || !isValidExpiry || cardData.nameOnCard.trim() === "") return;
+
+  setPaymentInfo(cardData); // ✅ store in context
+  navigate('/checkout/review'); // ✅ go to next step
+};
 
   const isValidCardNumber =
     cardData.cardNumber.replace(/\s/g, "").length === 16;
@@ -55,9 +64,9 @@ const PaymentStep = () => {
     return expiryDate > today;
   };
 
-  const isExpiryTyped = cardData.expiryDate.length > 0;
+  
   const isValidExpiry = validateExpiry(cardData.expiryDate);
-  const showExpiryError = isExpiryTyped && !isValidExpiry;
+  
 
   return (
     <div className="payment-container">
@@ -98,7 +107,7 @@ const PaymentStep = () => {
                 required
                 className={isValidExpiry === false ? "invalid" : ""}
               />
-              {isValidExpiry && <span className="checkmark-date">✔</span>}
+              
               {isValidExpiry === false && <span className="crossmark">✖</span>}
             </div>
             {isValidExpiry === false && (
@@ -137,6 +146,7 @@ const PaymentStep = () => {
         <button
           type="submit"
           className="continue-btn"
+          
           disabled={
             !isValidCardNumber ||
             !isValidCvv ||

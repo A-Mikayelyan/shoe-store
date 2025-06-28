@@ -113,11 +113,19 @@
   padding-right: 10px; /* remove large right padding */
 }
 
-.checkmark-cvv, .checkmark-date, .checkmark-cardnumber {
+
+
+.checkmark-cvv{
   color: green;
   font-size: 1rem;
-  margin-top: 2px;
-  margin-left: -20px;
+  margin-top: 0px !important;
+  transform: translateX(25px);
+}
+.checkmark-cardnumber{
+  color: green;
+  font-size: 1rem;
+  margin-top: 0px !important;
+  transform: translateX(-172px);
 }
 
 .input-with-icon {

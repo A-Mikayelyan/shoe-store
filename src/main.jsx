@@ -6,15 +6,18 @@ import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
 import { DrawerProvider } from './context/CartDrawerContext';
 import { SummaryDrawerProvider } from './context/SummaryDrawerContext';
+import { CheckoutProvider } from './context/CheckoutContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <FavoritesProvider>
         <DrawerProvider>
-          <SummaryDrawerProvider> {/* ✅ wrap here */}
+          <SummaryDrawerProvider>
             <CartProvider>
-              <App />
+              <CheckoutProvider>
+                <App />
+              </CheckoutProvider>
             </CartProvider>
           </SummaryDrawerProvider>
         </DrawerProvider>

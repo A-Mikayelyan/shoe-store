@@ -1,0 +1,191 @@
+.review-page {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.55rem;
+  color: #000;
+  margin-left: 10px;
+  margin-top: -30px;
+}
+
+.review-left {
+  width: 45%;
+}
+
+.review-title {
+  font-size: 0.46rem;
+  font-weight: 100;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.divider-line {
+  height: 0.2px;
+  background-color: #d9d9d9;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.address-pair {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.address-box {
+  width: 50%;
+}
+
+.address-box h4 {
+  font-size: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.address-box p {
+  font-size: 0.5rem;
+  margin: 2px 0;
+}
+
+.review-confirm-line {
+  height: 0.2px;
+  background-color: #d9d9d9;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.review-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px; 
+  line-height: 1.8;
+  margin-bottom: 10px;
+
+}
+
+.review-confirm input[type="checkbox"] {
+  margin-top: 10px;
+  transform: scale(0.85);
+}
+
+
+
+.send-order-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 90px;
+  font-size: 0.41rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  transform: translateX(40px);
+}
+
+.send-order-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.review-confirm input[type="checkbox"] {
+  appearance: none; /* Removes default browser style */
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000;
+  border-radius: 0; /* Ensures sharp corners */
+  margin-top: 2px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.review-confirm input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  width: 3px;
+  height: 7px;
+  border: solid #000;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+  font-size: 5px;
+  color: black;
+}
+
+.review-confirm label {
+  font-size: 0.5rem; /* Or any size you prefer */
+  line-height: 1.9;
+  margin: 0;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.review-grid h4 {
+  font-size: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.review-grid p {
+  font-size: 0.5rem;
+  margin: 2px 0;
+}
+
+.toast-inline {
+position: fixed;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+  border-radius: 1px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: fit-content;
+  white-space: nowrap;
+  animation: slideFadeIn 0.4s ease forwards;
+  opacity: 0;
+  
+}
+
+.toast-inline button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  color: black;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  10%, 90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+
+
+

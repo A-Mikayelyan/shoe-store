@@ -8,9 +8,10 @@ import ShoeDetail from "./ShoeDetail";
 import ShoeCategoryPage from "./pages/ShoeCategoryPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
-import LoginStep from "./pages/Checkout/LoginStep";
-import ShippingStep from "./pages/Checkout/ShippingStep";
-import PaymentStep from "./pages/Checkout/PaymentStep";
+import LoginStep from "./pages/Checkout/steps/LoginStep";
+import ShippingStep from "./pages/Checkout/steps/ShippingStep";
+import PaymentStep from "./pages/Checkout/steps/PaymentStep";
+import ReviewStep from "./pages/Checkout/steps/ReviewStep";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route index element={<LoginStep />} />
           <Route path="shipping" element={<ShippingStep />} />
           <Route path="payment" element ={ <PaymentStep/>} />
+          <Route path="review" element ={ <ReviewStep/>} />
         </Route>
       </Route>
     </Routes>

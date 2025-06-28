@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./ShippingStep.css";
 import { useNavigate } from "react-router-dom";
+import { useCheckout } from "../../../context/CheckoutContext";
 
 const ShippingStep = () => {
   const navigate = useNavigate();
+  const { setShippingInfo } = useCheckout();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,6 +31,8 @@ const ShippingStep = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/checkout/payment");
+    setShippingInfo(formData);
+    
   };
 
   const requiredFields = [

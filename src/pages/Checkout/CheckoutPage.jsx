@@ -3,7 +3,6 @@ import { NavLink, Outlet } from "react-router-dom";
 import CheckoutHeader from "./CheckoutHeader";
 import CheckOutSummary from "./CheckoutSummary";
 import "./CheckoutPage.css";
-import { useEffect } from "react";
 
 const CheckoutPage = () => {
   return (
