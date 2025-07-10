@@ -5,6 +5,7 @@ import "./Layout.css";
 import { useRef, useState } from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { useCartDrawer } from "../context/CartDrawerContext";
+import AiChatBot from "./AiChatbot";
 
 export const menCategories = [
   { name: "SNEAKERS", path: "/men/sneakers" },
@@ -77,7 +78,7 @@ const Layout = () => {
                   clearTimeout(hoverTimeOut.current);
                 }}
               >
-                <HiOutlineShoppingBag size={17} className="icon-link" />
+                <HiOutlineShoppingBag size={27} className="icon-link" />
               </div>
 
               <NavLink to="/favorites" className="nav-link icon-link">
@@ -88,13 +89,18 @@ const Layout = () => {
         </nav>
       )}
 
-      {/* ✅ Main content from routing */}
+      {/* ✅ Routed content */}
       <main className="main-content">
         <Outlet />
       </main>
 
-      {/* ✅ Render drawers only when not on checkout or shoe detail pages */}
-      {!isCheckout && <CartDrawer />}
+      {/* ✅ Global components */}
+      {!isCheckout && (
+        <>
+          <CartDrawer />
+          <AiChatBot /> {/* ✅ Chatbot rendered globally except on checkout */}
+        </>
+      )}
       <SummaryDrawer />
     </div>
   );

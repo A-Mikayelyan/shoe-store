@@ -13,7 +13,6 @@ const ReviewStep = () => {
   const [confirmed, setConfirmed] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
 
-
   useEffect(() => {
     if (
       !shippingInfo ||
@@ -29,11 +28,14 @@ const ReviewStep = () => {
   }, [shippingInfo, navigate]);
 
   const handleConfirm = () => {
-    if (confirmed) {
-      setToastVisible(true);
-      setTimeout(() => setToastVisible(false), 3000); // auto-hide after 3s
-    }
-  };
+  if (confirmed) {
+    setToastVisible(true);
+    setTimeout(() => {
+      setToastVisible(false);
+      navigate('/');
+    }, 1500); // navigate after toast disappears
+  }
+};
 
   return (
     <div className="review-page">
