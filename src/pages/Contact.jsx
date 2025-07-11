@@ -58,69 +58,72 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page">
-      {/* ✅ Floating Message Banner */}
-      {statusMessage && (
-        <div className={`floating-banner ${isError ? "error" : "success"}`}>
-          {statusMessage}
-        </div>
-      )}
-
-      <div className="contact-content">
-        <h2 className="contact-title">Contact Us</h2>
-
-        <div className="contact-info">
-          <p>✉️ Email: hello@pelle.com</p>
-          <p>📞 Phone: +1 (555) 123-4567</p>
-          <p>📍 Address: 123 Fashion Ave, New York, NY</p>
-          <p>🕘 Hours: Mon – Fri, 9am – 6pm</p>
-        </div>
-
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your name"
-            required
-          />
-
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your email"
-            required
-          />
-
-          <label>Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Your message"
-            rows="5"
-            required
-          />
-
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-
-      {/* ✅ Animated Footer */}
-      <div className="footer-wrapper">
-        <footer className="contact-footer" ref={footerRef}>
-          <p>pellé &nbsp;|&nbsp; New York — Milan — Tokyo</p>
-          <p className="footer-note">
-            © {new Date().getFullYear()} pellé. All rights reserved.
-          </p>
-        </footer>
-      </div>
+   <div className="contact-page">
+  {/* ✅ Floating Message Banner */}
+  {statusMessage && (
+    <div className={`floating-banner ${isError ? "error" : "success"}`}>
+      {statusMessage}
     </div>
+  )}
+
+  <div className="contact-center-block">
+    <div className="contact-content">
+      <h2 className="contact-title">Contact Us</h2>
+
+      <div className="contact-info">
+        <p>Email: hello@pelle.com</p>
+        <p> Phone: +1 (555) 123-4567</p>
+        <p> Address: 123 Fashion Ave, New York, NY</p>
+        <p> Hours: Mon – Fri, 9am – 6pm</p>
+      </div>
+
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Your name"
+          required
+        />
+
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Your email"
+          required
+        />
+
+        <label>Message</label>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Your message"
+          rows="5"
+          required
+        />
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    {/* Footer Text Right Below Contact Box */}
+    <div className="footer-wrapper">
+      <footer className="contact-footer" ref={footerRef}>
+        <p>pellé &nbsp;|&nbsp; New York — Milan — Tokyo</p>
+        <p className="footer-note">
+          © {new Date().getFullYear()} pellé. All rights reserved.
+        </p>
+      </footer>
+    </div>
+  </div>
+</div>
+
   );
 };
 

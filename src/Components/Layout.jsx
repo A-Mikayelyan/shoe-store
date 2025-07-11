@@ -61,9 +61,7 @@ const Layout = () => {
                 <NavLink to="/about" className="nav-link">
                   ABOUT
                 </NavLink>
-                <NavLink to="/contact" className="nav-link">
-                  CONTACT
-                </NavLink>
+                
               </div>
             </div>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams, NavLink, Link } from "react-router-dom";
 import { SHOE_API } from "../constants/api";
+import Contact from "../pages/Contact"; // ✅ Reuse your existing Contact component
 import "./ShoeCategoryPage.css";
 
 const menCategories = [
@@ -8,10 +9,9 @@ const menCategories = [
   { label: "Loafers", path: "loafers" },
   { label: "Sandals", path: "sandal" },
   { label: "Boots", path: "boots" },
-  {label: "Sneakers", path: "sneakers"}
+  { label: "Sneakers", path: "sneakers" },
 ];
 
-// Define the type for category keys
 const categoryHeroImages = {
   loafers: "/images/loafers-hero.png",
   sneakers: "/images/sneakers-hero.png",
@@ -27,7 +27,6 @@ const ShoeCategoryPage = () => {
   const [sortOrder, setSortOrder] = useState("default");
   const normalizedCategory = category.toLowerCase().replace(/s$/, "");
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (sortRef.current && !sortRef.current.contains(e.target)) {
@@ -53,8 +52,6 @@ const ShoeCategoryPage = () => {
 
   return (
     <div className="men-page">
-
-      
       {/* Title */}
       <h2 className="page-title">
         {normalizedCategory === "all"
@@ -62,7 +59,7 @@ const ShoeCategoryPage = () => {
           : "MEN'S " + normalizedCategory.toUpperCase() + "S"}
       </h2>
 
-      {/* Nav + Sort - Right Aligned */}
+      {/* Nav + Sort */}
       <div className="category-top-row">
         <div className="category-row-inner">
           <div className="category-nav-bar">
@@ -124,11 +121,7 @@ const ShoeCategoryPage = () => {
       {/* Shoe Grid */}
       <div className="shoe-grid">
         {sortedShoes.map((shoe) => (
-          <Link
-            to={`/shoe/${shoe.id}`}
-            key={shoe.id}
-            className="shoe-card-link"
-          >
+          <Link to={`/shoe/${shoe.id}`} key={shoe.id} className="shoe-card-link">
             <div className="shoe-card">
               <div className="shoe-image-wrapper">
                 <img src={shoe.image} alt={shoe.name} className="shoe-img" />
@@ -138,6 +131,13 @@ const ShoeCategoryPage = () => {
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* ✅ Always show Contact section at bottom */}
+      <div className="contact-footer-wrapper">
+        <div className="contact-embed-box">
+          <Contact />
+        </div>
       </div>
     </div>
   );
