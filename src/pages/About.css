@@ -107,7 +107,7 @@
   margin-top: 60px;
 }
 
-.contact-footer {
+.contact-footter {
   opacity: 0;
   text-align: center;
   font-size: 14px;
@@ -116,7 +116,9 @@
   line-height: 1.6;
   padding-top: 30px;
   border-top: 1px solid #eee;
-  margin-left: 350px;
+  transform: translateX(270px) !important;
+  
+ 
 }
 
 /* Animated Footer when visible */

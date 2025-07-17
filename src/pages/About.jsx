@@ -112,7 +112,7 @@ const AboutPage = () => {
       </section>
 
        <div className="footer-wrapper">
-        <footer className="contact-footer" ref={footerRef}>
+        <footer className="contact-footter" ref={footerRef}>
           <p>pellé &nbsp;|&nbsp; New York — Milan — Tokyo</p>
           <p className="footer-note">
             © {new Date().getFullYear()} pellé. All rights reserved.

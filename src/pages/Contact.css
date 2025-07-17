@@ -131,7 +131,9 @@
   line-height: 1.6;
   padding-top: 30px;
   border-top: 1px solid #eee;
-   margin: 0 auto;
+  margin: 0 auto;
+  transform: translateX(20px) !important;
+  
 }
 
 /* Animated Footer when visible */
