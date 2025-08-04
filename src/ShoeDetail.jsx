@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { SHOE_API } from "./constants/api";
+import { SHOE_API, WOMEN_SHOE_API } from "./constants/api";
 import "./ShoeDetails.css";
 import { useCart } from "./context/CartContext";
 import { useState } from "react";
 import { useCartDrawer } from "./context/CartDrawerContext";
 import { useFavorites } from "./context/FavoritesContext";
 
-const ShoeDetail = () => {
+const ShoeDetail = ({ gender }) => {
   const { addToCart } = useCart();
   const { id } = useParams();
   const { openCartDrawer } = useCartDrawer();
@@ -16,9 +16,9 @@ const ShoeDetail = () => {
   const [showFavMessage, setShowFavMessage] = useState(false);
   const [showSizeDrawer, setShowSizeDrawer] = useState(false);
 
-  
+  const shoes = gender === "women" ? WOMEN_SHOE_API : SHOE_API;
+  const shoe = shoes.find((item) => item.id === parseInt(id));
 
-  const shoe = SHOE_API.find((item) => item.id === parseInt(id));
   if (!shoe) return <div className="not-found">Shoe not found</div>;
 
   return (
@@ -87,8 +87,10 @@ const ShoeDetail = () => {
         <h2 className="shoe-title">{shoe.name}</h2>
         <p className="shoe-price">€ {shoe.price.toFixed(2)}</p>
 
-        {/* Styled select box with guide */}
-        <div className="size-select-container" onClick={() => setShowSizeDrawer(true)}>
+        <div
+          className="size-select-container"
+          onClick={() => setShowSizeDrawer(true)}
+        >
           <div className="size-select-box">
             <span className="size-label">{selectedSize || "Size"}</span>
             <span className="size-arrow">⌄</span>

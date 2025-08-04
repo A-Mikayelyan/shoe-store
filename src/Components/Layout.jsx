@@ -15,36 +15,45 @@ export const menCategories = [
   { name: "VIEW ALL", path: "/men/all" },
 ];
 
+export const womenCategories = [
+  { name: "SNEAKERS", path: "/women/sneaker" },
+  { name: "LOAFERS", path: "/women/loafer" },
+  { name: "HEELS", path: "/women/heel" },
+  { name: "SANDALS", path: "/women/sandal" },
+  { name: "VIEW ALL", path: "/women/all" },
+];
+
 const Layout = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isManHovered, setIsManHovered] = useState(false);
+  const [isWomanHovered, setIsWomanHovered] = useState(false);
   const { openCartDrawer } = useCartDrawer();
   const hoverTimeOut = useRef(null);
 
   const isCheckout = location.pathname.startsWith("/checkout");
-  const isShoeDetail = location.pathname.startsWith("/shoe/");
 
   return (
     <div className="layout-wrapper">
-      {/* ✅ Hide navbar on checkout */}
       {!isCheckout && (
         <nav className="navbar">
           <div className="nav-container">
-            {/* Left-aligned group (logo + nav-links) */}
+            {/* Left-aligned group */}
             <div className="nav-left-group">
               <button className="logo-button" onClick={() => navigate("/")}>
                 P E L L É
               </button>
               <div className="nav-links">
+                {/* MAN nav */}
                 <div
                   className="man-nav-wrapper"
                   onMouseEnter={() => setIsManHovered(true)}
                   onMouseLeave={() => setIsManHovered(false)}
+                  style={{ position: "relative" }}
                 >
                   <span className="nav-link man-link">MAN</span>
                   {isManHovered && (
-                    <div className="category-grid-dropdown">
+                    <div className="dropdown-grid" style={{ left: "0" }}>
                       {menCategories.map((category) => (
                         <Link
                           key={category.name}
@@ -58,14 +67,37 @@ const Layout = () => {
                   )}
                 </div>
 
+                {/* WOMAN nav */}
+                <div
+                  className="woman-nav-wrapper"
+                  onMouseEnter={() => setIsWomanHovered(true)}
+                  onMouseLeave={() => setIsWomanHovered(false)}
+                  style={{ position: "relative" }}
+                >
+                  <span className="nav-link woman-link">WOMAN</span>
+                  {isWomanHovered && (
+                    <div className="dropdown-grid" style={{ left: "0" }}>
+                      {womenCategories.map((category) => (
+                        <Link
+                          key={category.name}
+                          to={category.path}
+                          className="category-grid-item"
+                        >
+                          {category.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* ABOUT */}
                 <NavLink to="/about" className="nav-link">
                   ABOUT
                 </NavLink>
-                
               </div>
             </div>
 
-            {/* Right-aligned group (cart, favorites, etc.) */}
+            {/* Right-aligned group */}
             <div className="nav-right-group">
               <div
                 className="cart-icon-wrapper"
@@ -87,16 +119,16 @@ const Layout = () => {
         </nav>
       )}
 
-      {/* ✅ Routed content */}
+      {/* Main content */}
       <main className="main-content">
         <Outlet />
       </main>
 
-      {/* ✅ Global components */}
+      {/* Global components */}
       {!isCheckout && (
         <>
           <CartDrawer />
-          <AiChatBot /> {/* ✅ Chatbot rendered globally except on checkout */}
+          <AiChatBot />
         </>
       )}
       <SummaryDrawer />

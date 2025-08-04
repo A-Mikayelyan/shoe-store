@@ -1,0 +1,267 @@
+.men-page {
+  padding: 2rem 4rem;
+  
+  background-color: #fff;
+  color: #000;
+}
+
+.page-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.category-nav-bar {
+  display: flex;
+  justify-content: flex-end; /* Aligns categories to the right */
+  gap: 2rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.category-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.6rem;
+  color: #111;
+  padding-bottom: 4px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  letter-spacing: 0.5px;
+}
+
+.category-link:hover::after,
+.category-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.2px;
+  width: 100%;
+  background-color: #020201; /* Orange underline like Santoni */
+}
+
+.category-link:hover {
+  color: #111; /* Do not change color on hover */
+}
+
+.category-link.active {
+  color: #111; /* Do not change active color */
+}
+
+.shoe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 3rem;
+  padding-top: 3rem;
+}
+
+.shoe-card {
+  text-align: center;
+  
+  color: #000;
+}
+
+.shoe-img {
+  width: 85%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: -50px;
+  transition: none !important;
+  transform: none !important;
+}
+
+.shoe-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0.2rem;
+  color: #000 !important;
+  
+  transform: none;
+  transition: none;
+  text-decoration: none;
+}
+
+.shoe-price {
+  font-size: 0.4rem;
+  font-weight: 400;
+  color: #111;
+  text-decoration: none;
+}
+
+.shoe-image-wrapper {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.category-top-row {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: flex-end;   /* Align sort dropdown to the right */
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-bar label {
+  font-size: 0.6rem;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.sort-bar select {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  
+}
+
+.shoe-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.custom-sort-wrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 0.6rem;
+}
+
+.sort-toggle-btn {
+  background: white;
+  border: none;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sort-toggle-btn .arrow {
+  margin-left: 6px;
+  font-size: 0.65rem;
+}
+
+.sort-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-top: 5px;
+  z-index: 1000;
+  padding: 0;
+  list-style: none;
+  margin-left: 100px;
+}
+
+.sort-dropdown li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.sort-dropdown li:hover {
+  background-color: #f7f7f7;
+}
+
+
+.sort-dropdown li.active-sort {
+  border-bottom: 1px solid #999; /* light black underline */
+}
+
+.category-top-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* This will group the nav and sort neatly */
+.category-row-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+
+
+/* ✅ Additional CSS for 2 shoes + 1 big hero image in first row */
+
+.shoe-custom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: stretch;
+}
+
+.shoe-custom-grid .shoe-card {
+  height: 100%;
+}
+
+.hero-card {
+  grid-row: span 2;
+}
+
+.hero-img-grid {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Keep rest of your CSS untouched */
+
+/* .no-shoes-contact-wrapper {
+  background-color: #f9f9f9;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+} */
+
+/* .contact-embed-box {
+  max-width: 760px;
+  width: 100%;
+  background-color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-footer-wrapper {
+  background-color: #f9f9f9;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-embed-box {
+  width: 100%;
+  max-width: 760px;
+  background-color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+ */
+

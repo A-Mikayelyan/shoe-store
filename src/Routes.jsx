@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Favorites from "./pages/Favorites";
 import ShoeCategoryPage from "./pages/ShoeCategoryPage";
+import WomenCategoryPage from "./pages/WomenCategoryPage"; // ✅ Newly added
 import ShoeDetail from "./pages/ShoeDetail";
 import CheckOutLogin from "./pages/Checkout/LoginStep";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
@@ -67,14 +68,14 @@ export const routes = [
       </Layout>
     ),
   },
-
   {
-  path: "/cart",
-  element: <Layout>
-    <CartPage />
-  </Layout>
-},
-
+    path: "/women/:category", // ✅ New women's category route
+    element: (
+      <Layout>
+        <WomenCategoryPage />
+      </Layout>
+    ),
+  },
   {
     path: "/shoe/:id",
     element: (
@@ -83,7 +84,6 @@ export const routes = [
       </Layout>
     ),
   },
-
   {
     path: "/checkout",
     element: (
@@ -92,7 +92,4 @@ export const routes = [
       </Layout>
     ),
   },
-
-
-
 ];
